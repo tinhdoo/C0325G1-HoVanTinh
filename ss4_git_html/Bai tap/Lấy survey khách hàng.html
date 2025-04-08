@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey</title>
+</head>
+<style>
+  select {
+    width: 400px;
+  }
+  label {
+    font-weight: bold;
+  }
+  hr {
+    margin: 20px 0;
+    select {
+      width: 100%;
+      padding: 6px;
+    }
+</style>
+<body>
+<form>
+
+  <div>
+    <h2> Market Research Survey</h2>
+    <div style="font: lining-nums; opacity: max(60%)">Please take a few moments to complete this satisfaction survey. </div>
+    <hr>
+    <label class="container">What is your age range?</label> <br>
+    <select id="ageRange"><option> 18-24</option> <option> 25-34</option> <option> 35-50 </option><option>50+</option></select> <br>
+    <label class="container">What is your yearly income range?</label> <br>
+    <select id="ageRange"><option> $0-$25,000</option> <option> $25,001-$50,000</option> <option> $50,001-$100,000</option><option>$100,000+</option></select> <br>
+    <label class="container">Gender Identity</label> <br>
+
+    <input type="radio" name="gender" value="Male"> Male <br>
+    <input type="radio" name="gender" value="Female"> Female <br>
+    <input type="radio" name="gender" value="Nonbinary">Nonbinary <br>
+    <input type="radio" name="gender" value="Other">Other <br> <input type="text"> <br>
+
+   <label class="container"> Which of the following products have your purchased in the last 2 months. Please check all that apply.</label> <br>
+    <input type="checkbox" name="Product1" value="Product 1"> Product 1 <br>
+    <input type="checkbox" name="Product2" value="Product 2"> Product 2 <br>
+    <input type="checkbox" name="Product3" value="Product 3"> Product 3 <br>
+
+    <label class="container"> How often would you use our new product?</label> <br>
+    <input type="radio" name="time" value="Daily"> Daily <br>
+    <input type="radio" name="time" value="Weekly"> Weekly <br>
+
+  </div>
+
+</form>
+</body>
+</html>
