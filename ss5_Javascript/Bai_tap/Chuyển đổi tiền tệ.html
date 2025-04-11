@@ -36,7 +36,6 @@
         <option value="VND">VND</option>
       </select>
     </td>
-    </td>
   </tr>
 </table>
 <button onclick="changeAmount()"> Convert</button>
@@ -51,6 +50,11 @@
     let from = document.getElementById("from").value;
     let to = document.getElementById("to").value;
     let Result;
+
+    if (amount <0 || amount > 10000000000 || isNaN(amount)) {
+      alert('Vui lòng nhập lại')
+      return;
+    }
 
 
     if (from === "USD" && to === "VND") {
