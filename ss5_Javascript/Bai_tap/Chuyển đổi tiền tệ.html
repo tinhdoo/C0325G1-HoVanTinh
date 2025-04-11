@@ -42,7 +42,6 @@
 <p id="Result"> Result</p>
 </body>
 <script>
-  document.getElementById(changeAmount()).addEventListener("change", changeAmount);
 
   function changeAmount() {
 
@@ -51,9 +50,14 @@
     let to = document.getElementById("to").value;
     let Result;
 
-    if (amount <0 || amount > 10000000000 || isNaN(amount)) {
+    if (amount <0 || isNaN(amount)) {
       alert('Vui lòng nhập lại')
       return;
+    }
+    if (amount.toString().length < 1 || amount.toString().length > 10) {
+      alert('Quá ký tự');
+      return;
+
     }
 
 
