@@ -2,70 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Tính lãi ngân hàng</title>
+  <style>
+    body {
+      background-color: #ffcccc;
+    }
+    table {
+      border-collapse: collapse;
+      color: red;
+      margin: auto;
+    }
+    th, td {
+      border: 1px solid black;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 5px;
+    }
+  </style>
 </head>
 <body>
-<style>
-  body {
-    background-color: purple;
-  }
-  table {
-    border-collapse: collapse;
-    color: red;
-    margin: auto ;
-  }
-  th, td {
-    border: 1px solid black;
-    text-align: centerx;
-    font-size: 15px;
-    font: bold;
-  }
-</style>
+
 <table>
-  <th colspan="2" style="background-color: green"> Tính lãi ngân hàng </th>
-
   <tr>
-    <td> Số tiền vay ban dầu</td>
-    <td><label> <input style="text-align: center" id="begin" type="number"></label></td>
+    <th colspan="2" style="background-color: green; color: white">Tính lãi ngân hàng</th>
   </tr>
   <tr>
-    <td> Số tháng cho vay</td>
-    <td><label> <select style="text-align: center" id="month">
-      <option> 3 tháng</option>
-      <option> 6 tháng</option>
-      <option> 9 tháng</option>
-      <option> 12 tháng</option>
-      <option> 18 tháng</option>
-      <option> 21 tháng</option>
-    </select></label></td>
+    <td>Tiền vay ban đầu</td>
+    <td><input style="text-align: center" id="begin" type="number"></td>
   </tr>
   <tr>
-    <td>Lãi xuất hàng tháng</td>
-    <td><label> <input id="interest" type="number" style="width: 83.7px"> %</label></td>
+    <td>Kỳ hạn</td>
+    <td>
+      <select style="text-align: center" id="month">
+        <option value="3">3 tháng</option>
+        <option value="6">6 tháng</option>
+        <option value="9">9 tháng</option>
+        <option value="12">12 tháng</option>
+        <option value="18">18 tháng</option>
+        <option value="21">21 tháng</option>
+      </select>
+    </td>
   </tr>
-
-  <td>
-    <button style="width: 161px ; background-color: fuchsia" id="result">Submit</button>
-  </td>
+  <tr>
+    <td>Lãi suất</td>
+    <td><input id="interest" type="number" style="width: 83.7px"> %</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <button style="width: 100%; background-color: fuchsia" id="result">Tính lãi</button>
+    </td>
+  </tr>
+  <tr>
+    <td>Tổng tiền sau kỳ hạn</td>
+    <td id="total">--</td>
+  </tr>
+  <tr>
+    <td>Tiền lãi nhận được</td>
+    <td id="profit">--</td>
+  </tr>
 </table>
 
 <script>
-  function result() {
-    let begin = document.getElementById("begin").value;
-    let month = document.getElementById("month").value;
-    let interest = document.getElementById("interest").value;
-    let result;
+  document.getElementById("result").onclick = function () {
+    let begin = parseFloat(document.getElementById("begin").value);
+    let month = parseInt(document.getElementById("month").value);
+    let interest = parseFloat(document.getElementById("interest").value);
 
-    if (isNaN(begin) || isNaN(month) || isNaN(interest)) {
-      alert('Vui lòng nhập lại');
-    } else {
-
-
-
+    if (isNaN(begin) || isNaN(interest)) {
+      alert("Vui lòng nhập đầy đủ số tiền và lãi suất!");
+      return;
     }
 
+    let rate = interest / 100;
+    let total = begin * Math.pow(1 + rate, month);
+    let profit = total - begin;
 
-  }
+    document.getElementById("total").innerText = total.toFixed(2) + " VND";
+    document.getElementById("profit").innerText = profit.toFixed(2) + " VND";
+  };
 </script>
+
 </body>
 </html>
