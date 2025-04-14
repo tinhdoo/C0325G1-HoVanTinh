@@ -5,21 +5,22 @@
   <title>Title</title>
 </head>
 <body>
-<label> Nhập doanh số <input id="doanhso" type="number"> </label>
+<label> Nhập doanh số <input id="doanhSo" type="number"> </label>
 <label> <button id="result"> Enter </button></label>
   <script>
       document.getElementById("result").addEventListener("click", function () {
-       let doanhso = +document.getElementById("doanhso").value;
+       let doanhSo = +document.getElementById("doanhSo").value;
        let result;
-
-          if (doanhso < 10000000) {
-            result = doanhso * 0.02;
+          if (doanhSo < 0) {
+            alert('Doanh số phải lớn hơn hoặc bằng 0');
+          } else if (doanhSo < 10000000) {
+            result = doanhSo * 0.02;
             alert("Hoa hồng của bạn là:" + result +"VND");
-          } else if (doanhso <= 50000000) {
-            result = doanhso * 0.05;
+          } else if (doanhSo <= 50000000) {
+            result = doanhSo * 0.05;
             alert("Hoa hồng của bạn là:" + result +"VND");
             } else {
-            result = doanhso * 0.1;
+            result = doanhSo * 0.1;
             alert("Hoa hồng của bạn là:" + result +"VND");
           }
           result.innerHTML = result;
