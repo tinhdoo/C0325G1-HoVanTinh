@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<style>
+  body {
+    background-color: purple;
+  }
+  table {
+    border-collapse: collapse;
+    color: red;
+    margin: auto ;
+  }
+  th, td {
+    border: 1px solid black;
+    text-align: centerx;
+    font-size: 15px;
+    font: bold;
+  }
+</style>
+<table>
+  <th colspan="2" style="background-color: green"> Tính lãi ngân hàng </th>
+
+  <tr>
+    <td> Số tiền vay ban dầu</td>
+    <td><label> <input style="text-align: center" id="begin" type="number"></label></td>
+  </tr>
+  <tr>
+    <td> Số tháng cho vay</td>
+    <td><label> <select style="text-align: center" id="month">
+      <option> 3 tháng</option>
+      <option> 6 tháng</option>
+      <option> 9 tháng</option>
+      <option> 12 tháng</option>
+      <option> 18 tháng</option>
+      <option> 21 tháng</option>
+    </select></label></td>
+  </tr>
+  <tr>
+    <td>Lãi xuất hàng tháng</td>
+    <td><label> <input id="interest" type="number" style="width: 83.7px"> %</label></td>
+  </tr>
+
+  <td>
+    <button style="width: 161px ; background-color: fuchsia" id="result">Submit</button>
+  </td>
+</table>
+
+<script>
+  function result() {
+    let begin = document.getElementById("begin").value;
+    let month = document.getElementById("month").value;
+    let interest = document.getElementById("interest").value;
+    let result;
+
+    if (isNaN(begin) || isNaN(month) || isNaN(interest)) {
+      alert('Vui lòng nhập lại');
+    } else {
+
+
+
+    }
+
+
+  }
+</script>
+</body>
+</html>
