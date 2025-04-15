@@ -36,7 +36,7 @@
           alert(`Tháng ${month} có 31 ngày`)
           break;
         case 2:
-          if (year === 2024) {
+          if ((year%4===0 && year%100!==0)|| year%400===0) {
             alert("Tháng 2 có 29 ngày")
           }else{
             alert('Tháng 2 có 28 ngày')

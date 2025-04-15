@@ -9,19 +9,19 @@
 <button id="result">Tính</button>
 <script>
   document.getElementById("result").addEventListener("click", function () {
-    let tuoi = +document.getElementById("tuoi").value;
-    if ( tuoi < 0) {
-      alert('Nhập lại')
+      let tuoi = +document.getElementById("tuoi").value;
+      if (tuoi < 0) {
+        alert('Nhập lại')
+      } else {
+        if (tuoi === 15) {
+          alert('Đủ tuổi');
+        } else if (tuoi > 15) {
+          alert('Qúa tuổi');
+        } else {
+          alert('Chưa đủ tuổi')
+        }
+      }
     }
-
-    if (tuoi === 15) {
-      alert('Đủ tuổi');
-    } else if (tuoi > 15) {
-      alert('Qúa tuổi');
-    } else {
-      alert('Chưa đủ tuổi')
-    }
-  }
   )
 </script>
 </body>
