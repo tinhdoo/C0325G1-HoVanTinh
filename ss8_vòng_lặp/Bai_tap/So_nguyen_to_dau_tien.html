@@ -9,15 +9,37 @@
 <script>
   let count = 0;
   let n = 2;
-  while ( count < 20 ) {
-    if (n % n !== 0 && n % 1 !== 0) {
-      n++
-      } else {
-      document.write(n);
-      count++;
-      n++;
+  for (let i = 0; ; i++) {
+    if (i <= 1) {
+      number = 0
+    } else if (i === 2 || i === 3) {
+      count++
+      so_nguyen_to.push(i)
+    } else if (i % 2 === 0) {
+      number = 0
+    } else if (i >= 4) {
+      for (let j = 3; j < (i - 1); j++) {
+        if (i % j === 0) {
+          number = 0
+          break
+        } else {
+          number++
+        }
+      }
+
+      if (number > 0) {
+        number.push(i)
+        count++
+        if (count === n) {
+          break
+        }
+      }
 
     }
+  }
+
+  return so_nguyen_to
+
   }
 
 
