@@ -1,26 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
 </head>
 <body>
 <script>
-  let numbers;
-  numbers = prompt('Nhập n số nguyên tố đầu tiên:');
-  numbers = parseInt(numbers);
-
   let count = 0;
   let n = 2;
-  while (count < numbers) {
-    if (isNaN(numbers)) {
-      document.write(n)
-      count++;
-
+  while ( count < 20 ) {
+    if (n % n !== 0 && n % 1 !== 0) {
+      n++
       } else {
-      break;
+      document.write(n);
+      count++;
+      n++;
+
     }
   }
+
+
+
 </script>
 
 </body>
