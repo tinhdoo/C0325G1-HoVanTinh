@@ -6,18 +6,21 @@
 </head>
 <body>
 <script>
-  let i = 0;
-  while (i < 20 || i > 100) {
-    i = prompt()
-    console.log(i);
+  let i = Number(prompt('Nhập nhiệt độ'));
+
+  while (isNaN(i) || i < 20 || i > 100) {
+    if (isNaN(i)) {
+      i = Number(prompt('Hãy nhập một số hợp lệ'));
+      continue;
+    }
     if (i < 20) {
       alert('Hãy tăng nhiệt độ');
     } else if (i > 100) {
       alert('Hãy giảm nhiệt độ');
-    } else {
-      alert('Nhiệt độ hiện tại là :'+ i);
     }
   }
+  alert('Nhiệt độ hiện tại là :' + i);
+
 </script>
 </body>
 </html>

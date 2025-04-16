@@ -7,43 +7,26 @@
 </head>
 <body>
 <script>
-  let count = 0;
-  let n = 2;
-  for (let i = 0; ; i++) {
-    if (i <= 1) {
-      number = 0
-    } else if (i === 2 || i === 3) {
-      count++
-      so_nguyen_to.push(i)
-    } else if (i % 2 === 0) {
-      number = 0
-    } else if (i >= 4) {
-      for (let j = 3; j < (i - 1); j++) {
-        if (i % j === 0) {
-          number = 0
-          break
-        } else {
-          number++
-        }
-      }
-
-      if (number > 0) {
-        number.push(i)
-        count++
-        if (count === n) {
-          break
-        }
-      }
-
+  function isPrime(n) {
+    if (n < 2) return false;
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i === 0) return false;
     }
+    return true;
   }
 
-  return so_nguyen_to
+  let count = 0;
+  let number = 2;
+  let result = "";
 
+  while (count < 20) {
+    if (isPrime(number)) {
+      result += number + "<br>";
+      count++;
+    }
+    number++;
   }
-
-
-
+  document.writeln(result);
 </script>
 
 </body>
