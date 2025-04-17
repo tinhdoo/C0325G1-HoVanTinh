@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  /*let mycolor = ["red", "green", "blue", "black"];
+  mycolor.join = ["red", "green", "blue", "black"];
+  console.log(mycolor);*/
+
+  function insertDash(str) {
+    let result = str[0]; // bắt đầu từ ký tự đầu tiên
+
+    for (let i = 1; i < str.length; i++) {
+      let prev = parseInt(str[i - 1]);
+      let curr = parseInt(str[i]);
+
+      if (prev % 2 === 0 && curr % 2 === 0) {
+        result += '-' + str[i];
+      } else {
+        result += str[i];
+      }
+    }
+
+    console.log(insertDash(input));
+
+    return result;
+  }
+
+
+</script>
+</body>
+</html>
