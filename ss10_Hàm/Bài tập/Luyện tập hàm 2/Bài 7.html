@@ -6,9 +6,22 @@
 </head>
 <body>
 <script>
-  function chanGe(){
-
+  function doiCho(a, b) {
+    let temp = a;
+    a = b;
+    b = temp;
+    return [a, b];
   }
+
+  let num1 = parseInt(prompt("Nhập số thứ nhất:"));
+  let num2 = parseInt(prompt("Nhập số thứ hai:"));
+
+  let ketQua = doiCho(num1, num2);
+
+  document.write("Sau khi đổi chỗ: <br>");
+  document.write("Số thứ nhất: " + ketQua[0] + "<br>");
+  document.write("Số thứ hai: " + ketQua[1]);
+
 </script>
 
 </body>
