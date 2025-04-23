@@ -112,9 +112,12 @@
     let proA = document.getElementById("pro-a").value;
   }
 
-  function dele(){
+  function dele(index){
+   let products = document.getElementById("pro-a").value;
+    if (confirm("Bạn có chắc muốn xoá sản phẩm này không?")) {
+      products.splice(index, 1);
 
-
+    }
   }
 
 </script>
