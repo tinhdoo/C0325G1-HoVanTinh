@@ -14,6 +14,12 @@
     getStatus() {
       return this.status;
     }
+    turnOff(){
+      this.status = false;
+    }
+    turnOn() {
+      this.status = true;
+    }
   }
 
   class SwitchButton {
@@ -23,11 +29,13 @@
     }
 
     switchOff() {
-      this.lamp.status = false;
+      this.status = false;
+      this.lamp.turnOff();
     }
 
     switchOn() {
-      this.lamp.status = true;
+      this.status = true;
+      this.lamp.turnOn();
     }
   }
 
